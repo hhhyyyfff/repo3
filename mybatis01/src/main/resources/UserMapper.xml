@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<!-- namespace:接口的全类名 -->
+<mapper namespace="com.bdqn.zmj.dao.UserMapper">
+
+	<!-- 查询语句 resultType:返回的类型 -->
+	<select id="selectAll"  resultType="User">
+		select * from smbms_user
+	</select>
+	
+	<select id="selectById" resultType="User">
+		select * from smbms_user where id = #{id}
+	</select>
+	
+	<update id="update">
+		update smbms_user set userCode = #{ucode},userName=#{uname} where id = #{uid}
+	</update>
+
+</mapper>
